@@ -3,7 +3,7 @@ import { Redirect, Link } from 'react-router-dom';
 
 const BASE_URL = "https://qaengineapi.azurewebsites.net/api/"
 
-const Profile = () => {
+const Profile = (props) => {
   const [profile, setProfile] = useState({});
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Profile = () => {
     getProfile();
   }, [])
 
-  if (!sessionStorage.getItem("auth_user")) {
+  if (!props.auth.auth) {
     return <Redirect to="/login" />;
   }
 

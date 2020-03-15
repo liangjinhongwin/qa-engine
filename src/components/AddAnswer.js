@@ -32,7 +32,7 @@ const AddAnswer = (props) => {
       })
   }
 
-  if (!sessionStorage.getItem("auth_user")) {
+  if (!props.auth.auth) {
     return <Redirect to="/login" />;
   }
 

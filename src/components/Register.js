@@ -3,7 +3,7 @@ import { Redirect, Link } from 'react-router-dom';
 
 const BASE_URL = "https://qaengineapi.azurewebsites.net/api/"
 
-const register = (props) => {
+const Register = (props) => {
   const signup = async (e) => {
     e.preventDefault();
     const username = e.target.username.value;
@@ -11,12 +11,17 @@ const register = (props) => {
     const rePassword = e.target.rePassword.value;
 
     if (username === "" || password === "") {
-      alert("Username and password are required");
+      alert("Username and password are required.");
       return;
     }
 
     if (password !== rePassword) {
-      alert("Please confrim password");
+      alert("Please confrim password.");
+      return;
+    }
+
+    if (password.length < 8) {
+      alert("Password has at least 8 characters.");
       return;
     }
 
@@ -35,11 +40,13 @@ const register = (props) => {
         if (response.status === 200) {
           alert("Sign up successfully!");
           props.history.push("/login");
+        } else if (response.status === 204) {
+          alert("Username has been used.");
         }
       });
   }
 
-  if (sessionStorage.getItem("auth_user")) {
+  if (props.auth.auth) {
     return <Redirect to="/" />;
   }
 
@@ -70,4 +77,4 @@ const register = (props) => {
   );
 }
 
-export default register;
+export default Register;

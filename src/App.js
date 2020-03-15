@@ -24,20 +24,20 @@ const App = () => {
 
   return (
     <Router>
-      <div id="wrapper" >
+      <div id="wrapper">
         <Nav auth={authProps} />
         <div className="container vh-100">
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/register" exact component={Register} />
+            <Route path="/" exact render={(props) => <Home {...props} auth={authProps} />} />
+            <Route path="/register" exact render={(props) => <Register {...props} auth={authProps} />} />
             <Route path="/login" exact render={(props) => <Login {...props} auth={authProps} />} />
-            <Route path="/question/id=:id" exact component={Detail} />
-            <Route path="/question/create" exact component={AddQuestion} />
-            <Route path="/question/edit/id=:id" exact component={EditQuestion} />
-            <Route path="/answer/create" exact component={AddAnswer} />
-            <Route path="/answer/edit/id=:id" exact component={EditAnswer} />
-            <Route path="/answer/delete/id=:id" exact component={DeleteAnswer} />
-            <Route path="/profile" exact component={Profile} />
+            <Route path="/question/id=:id" exact render={(props) => <Detail {...props} auth={authProps} />} />
+            <Route path="/question/create" exact render={(props) => <AddQuestion {...props} auth={authProps} />} />
+            <Route path="/question/edit/id=:id" exact render={(props) => <EditQuestion {...props} auth={authProps} />} />
+            <Route path="/answer/create" exact render={(props) => <AddAnswer {...props} auth={authProps} />} />
+            <Route path="/answer/edit/id=:id" exact render={(props) => <EditAnswer {...props} auth={authProps} />} />
+            <Route path="/answer/delete/id=:id" exact render={(props) => <DeleteAnswer {...props} auth={authProps} />} />
+            <Route path="/profile" exact render={(props) => <Profile {...props} auth={authProps} />} />
           </Switch>
         </div>
         <Footer />
