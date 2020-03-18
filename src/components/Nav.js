@@ -9,8 +9,8 @@ const Nav = (props) => {
   }
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <header>
+      <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
         <Link to="/" className="navbar-brand">Q&A Engine</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@ const Nav = (props) => {
           }
         </div>
       </nav>
-    </div>
+    </header>
   );
 }
 
