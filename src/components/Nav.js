@@ -16,11 +16,11 @@ const Nav = (props) => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          {props.auth.auth && 
+          {props.auth.auth &&
             <ul className="navbar-nav ml-auto">
               <li className="nav-item" data-toggle="collapse" data-target="#navbarNav">
                 <span className="nav-link text-white">Hello, {sessionStorage.getItem("auth_user")}!</span>
-              </li>
+              </li>              
               <li className="nav-item" data-toggle="collapse" data-target="#navbarNav">
                 <Link to="/profile" className="nav-link"><button className="btn btn-info btn-sm">Profile</button></Link>
               </li>

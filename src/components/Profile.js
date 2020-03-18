@@ -46,30 +46,39 @@ const Profile = (props) => {
             <td>{profile.createdOn}</td>
           </tr>
           <tr>
-            <th>Questions you asked: </th>
+            <th>
+              Questions you asked:&nbsp;
+              {profile.questions && profile.questions.length > 0 ?
+                <button className="btn btn-success btn-sm" disabled>{profile.questions.length}</button> :
+                <button className="btn btn-secondary btn-sm" disabled>0</button>
+              }
+            </th>
             <td>
-              <ol>
-                {profile.questions && profile.questions.map((question, index) =>
-                  <li key={index}>
-                    <Link to={{ pathname: `question/id=${question.id}`, state: question }} className="text-decoration-none">{question.description}</Link>
-                    <p className="text-muted">{question.createdOn}</p>
-                  </li>
-                )}
-              </ol>
+              {profile.questions && profile.questions.map((question, index) =>
+                <span key={index}>
+                  <Link to={{ pathname: `question/id=${question.id}`, state: question }} className="text-decoration-none">{question.description}</Link>
+                  <p className="text-muted">{question.createdOn}</p>
+                </span>
+              )}
+
             </td>
           </tr>
           <tr>
-            <th>Questions you answered: </th>
+            <th>
+              Questions you answered:&nbsp;
+              {profile.answers && profile.answers.length > 0 ?
+                <button className="btn btn-success btn-sm" disabled>{profile.answers.length}</button> :
+                <button className="btn btn-secondary btn-sm" disabled>0</button>
+              }
+            </th>
             <td>
-              <ol>
-                {profile.answers && profile.answers.map((answer, index) =>
-                  <li key={index}>
-                    <Link to={{ pathname: `question/id=${answer.question.id}`, state: answer.question }} className="text-decoration-none">{answer.question.description}</Link>
-                    <p>{answer.description}</p>
-                    <p className="text-muted">{answer.createdOn}</p>
-                  </li>
-                )}
-              </ol>
+              {profile.answers && profile.answers.map((answer, index) =>
+                <span key={index}>
+                  <Link to={{ pathname: `question/id=${answer.question.id}`, state: answer.question }} className="text-decoration-none">{answer.question.description}</Link><br />
+                  <strong>{answer.description}</strong>
+                  <p className="text-muted">{answer.createdOn}</p>
+                </span>
+              )}
             </td>
           </tr>
         </tbody>

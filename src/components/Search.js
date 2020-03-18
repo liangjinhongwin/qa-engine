@@ -3,12 +3,13 @@ import { Redirect, Link } from 'react-router-dom';
 
 const BASE_URL = "https://qaengineapi.azurewebsites.net/api/";
 
-const Home = (props) => {
-  const [questions, setQuestions] = useState([]);
+const Search = (props) => {
+  const keyword = props.match.params.keyword;
+  const [questions, setQuestions] = useState(props.location.state);
 
   useEffect(() => {
     const getQuestions = async () => {
-      await fetch(BASE_URL + "Question", {
+      await fetch(BASE_URL + `Question/Search/${keyword}`, {
         method: "GET",
         headers: {
           'Accept': 'application/json',
@@ -21,7 +22,7 @@ const Home = (props) => {
         });
     }
     getQuestions();
-  }, []);
+  }, [keyword]);
 
   const search = (e) => {
     e.preventDefault();
@@ -39,7 +40,7 @@ const Home = (props) => {
 
   return (
     <div>
-      <h1>Question List</h1>
+      <h1>Search: {keyword}</h1>
       <div className="d-flex flex-wrap justify-content-between">
         <Link to="/question/create"><button className="btn btn-primary">I have a question</button></Link>
         <form onSubmit={search}>
@@ -69,11 +70,7 @@ const Home = (props) => {
                     {question.description}
                   </Link>
                 </td>
-                <td>
-                  {question.answers && question.answers.length > 0 ?
-                  <button className="btn btn-success btn-sm" disabled>{question.answers.length}</button> :
-                  <button className="btn btn-secondary btn-sm" disabled>0</button>}
-                </td>
+                <td>{question.answers && question.answers.length > 0 ? <button className="btn btn-success btn-sm" disabled>{question.answers.length}</button> : <button className="btn btn-secondary btn-sm" disabled>0</button>}</td>
                 <td>{question.user.userName}</td>
                 <td>{question.createdOn}</td>
               </tr>
@@ -85,4 +82,4 @@ const Home = (props) => {
   );
 }
 
-export default Home;
+export default Search;

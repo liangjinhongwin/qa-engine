@@ -13,6 +13,7 @@ import DeleteAnswer from './components/DeleteAnswer';
 import Profile from './components/Profile';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
+import Search from './components/Search';
 
 const App = () => {
   const [auth, setAuth] = useState(sessionStorage.getItem("auth_user"));
@@ -38,6 +39,8 @@ const App = () => {
             <Route path="/answer/edit/id=:id" exact render={(props) => <EditAnswer {...props} auth={authProps} />} />
             <Route path="/answer/delete/id=:id" exact render={(props) => <DeleteAnswer {...props} auth={authProps} />} />
             <Route path="/profile" exact render={(props) => <Profile {...props} auth={authProps} />} />
+            <Route path="/search/:keyword" exact render={(props) => <Search {...props} auth={authProps} />} />
+
           </Switch>
         </div>
         <Footer />

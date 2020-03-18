@@ -26,6 +26,7 @@ const Detail = (props) => {
   }
 
   return (
+    question &&
     <div>
       <div>
         <h1>Question</h1>
