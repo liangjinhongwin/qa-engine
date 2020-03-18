@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 
+const BASE_URL = "https://qaengineapi.azurewebsites.net/api/";
+
 const Detail = (props) => {
-  const question = props.location.state;
+  const [question, setQuestion] = useState(props.location.state);
+
+  useEffect(() => {
+    const getQuestion = async () => {
+      await fetch(BASE_URL + `question/${question.id}`, {
+        method: "GET",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => response.json())
+        .then(json => setQuestion(json));
+    }
+    getQuestion();
+  }, [question.id]);
 
   if (!props.auth.auth) {
     return <Redirect to="/login" />;

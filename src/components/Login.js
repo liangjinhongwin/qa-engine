@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 
-const BASE_URL = "https://qaengineapi.azurewebsites.net/api/"
+const BASE_URL = "https://qaengineapi.azurewebsites.net/api/";
 
 const Login = (props) => {
   const signup = async (e) => {

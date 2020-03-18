@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 
-const BASE_URL = "https://qaengineapi.azurewebsites.net/api/"
+const BASE_URL = "https://qaengineapi.azurewebsites.net/api/";
 
 const AddAnswer = (props) => {
   const question = props.location.state;
@@ -24,7 +24,7 @@ const AddAnswer = (props) => {
       .then(response => {
         if (response.status === 200) {
           alert("Answer has been posted.");
-          props.history.push("/");
+          props.history.push({ pathname: `/question/id=${question.id}`, state: question });
         }
         else {
           alert("Faided to create.");

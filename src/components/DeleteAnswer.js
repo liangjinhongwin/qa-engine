@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 
-const BASE_URL = "https://qaengineapi.azurewebsites.net/api/"
+const BASE_URL = "https://qaengineapi.azurewebsites.net/api/";
 
 const DeleteAnswer = (props) => {
   const question = props.location.state.question;
@@ -24,7 +24,7 @@ const DeleteAnswer = (props) => {
       .then(response => {
         if (response.status === 200) {
           alert("Answer has been deleted.");
-          props.history.push("/");
+          props.history.push({ pathname: `/question/id=${question.id}`, state: question });
         }
         else {
           alert("Faided to delete.");

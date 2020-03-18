@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 
-const BASE_URL = "https://qaengineapi.azurewebsites.net/api/"
+const BASE_URL = "https://qaengineapi.azurewebsites.net/api/";
 
 const EditAnswer = (props) => {
   const question = props.location.state.question;
@@ -26,7 +26,7 @@ const EditAnswer = (props) => {
       .then(response => {
         if (response.status === 200) {
           alert("Answer has been updated.");
-          props.history.push("/");
+          props.history.push({ pathname: `/question/id=${question.id}`, state: question });
         }
         else {
           alert("Faided to update.");
