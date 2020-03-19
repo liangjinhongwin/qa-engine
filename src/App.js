@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Detail from './components/Detail';
 import AddQuestion from './components/AddQuestion';
 import EditQuestion from './components/EditQuesioin';
+import DeleteQuestion from './components/DeleteQuestion';
 import AddAnswer from './components/AddAnswer';
 import EditAnswer from './components/EditAnswer';
 import DeleteAnswer from './components/DeleteAnswer';
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/question/id=:id" exact render={(props) => <Detail {...props} auth={authProps} />} />
             <Route path="/question/create" exact render={(props) => <AddQuestion {...props} auth={authProps} />} />
             <Route path="/question/edit/id=:id" exact render={(props) => <EditQuestion {...props} auth={authProps} />} />
+            <Route path="/question/delete/id=:id" exact render={(props) => <DeleteQuestion {...props} auth={authProps} />} />
             <Route path="/answer/create" exact render={(props) => <AddAnswer {...props} auth={authProps} />} />
             <Route path="/answer/edit/id=:id" exact render={(props) => <EditAnswer {...props} auth={authProps} />} />
             <Route path="/answer/delete/id=:id" exact render={(props) => <DeleteAnswer {...props} auth={authProps} />} />

@@ -23,7 +23,6 @@ const AddAnswer = (props) => {
     })
       .then(response => {
         if (response.status === 200) {
-          alert("Answer has been posted.");
           props.history.push({ pathname: `/question/id=${question.id}`, state: question });
         }
         else {

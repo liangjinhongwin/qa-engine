@@ -24,7 +24,6 @@ const EditQuestion = (props) => {
     })
       .then(response => {
         if (response.status === 200) {
-          alert("Question has been updated.");
           props.history.push({ pathname: `/question/id=${question.id}`, state: question });
         }
         else {

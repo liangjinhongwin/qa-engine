@@ -7,6 +7,7 @@ const EditAnswer = (props) => {
   const question = props.location.state.question;
   const answer = props.location.state.answer;
   const answerId = props.match.params.id;
+  
   const submit = async (e) => {
     e.preventDefault();
     let input = e.target.description.value;
@@ -25,7 +26,6 @@ const EditAnswer = (props) => {
     })
       .then(response => {
         if (response.status === 200) {
-          alert("Answer has been updated.");
           props.history.push({ pathname: `/question/id=${question.id}`, state: question });
         }
         else {

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
   const logout = () => {
-    alert("Good bye!");
     sessionStorage.clear();
     props.auth.setAuth(null);
   }

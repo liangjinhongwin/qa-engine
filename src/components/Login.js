@@ -27,7 +27,6 @@ const Login = (props) => {
     })
       .then(response => {
         if (response.status === 200) {
-          alert("Login successfully!");
           sessionStorage.setItem("auth_user", username);
           props.auth.setAuth(sessionStorage.getItem("auth_user"));
           props.history.push("/");

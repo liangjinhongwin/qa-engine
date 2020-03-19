@@ -31,9 +31,14 @@ const Detail = (props) => {
       <div>
         <h1>Question</h1>
         <span className="text-muted">{question.createdOn} created by {question.user.userName}</span> {sessionStorage.getItem("auth_user") === question.user.userName &&
-          <Link to={{ pathname: `/question/edit/id=${question.id}`, state: question }}>
-            <button className="btn btn-success btn-sm">Edit</button>
-          </Link>}
+          <span>
+            <Link to={{ pathname: `/question/edit/id=${question.id}`, state: question }}>
+              <button className="btn btn-success btn-sm">Edit</button>
+            </Link>
+            <Link to={{ pathname: `/question/delete/id=${question.id}`, state: question }} className="ml-1">
+              <button className="btn btn-danger btn-sm">Delete</button>
+            </Link>
+          </span>}
         <h4>{question.description}</h4>
       </div>
       <div className="mt-5">

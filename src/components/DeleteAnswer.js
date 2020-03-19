@@ -6,7 +6,7 @@ const BASE_URL = "https://qaengineapi.azurewebsites.net/api/";
 const DeleteAnswer = (props) => {
   const question = props.location.state.question;
   const answer = props.location.state.answer;
-  const answerId = props.match.params.id;
+
   const submit = async (e) => {
     e.preventDefault();
 
@@ -18,12 +18,11 @@ const DeleteAnswer = (props) => {
       },
       body: JSON.stringify({
         "UserName": sessionStorage.getItem("auth_user"),
-        "Id": answerId
+        "Id": answer.id
       })
     })
       .then(response => {
         if (response.status === 200) {
-          alert("Answer has been deleted.");
           props.history.push({ pathname: `/question/id=${question.id}`, state: question });
         }
         else {
