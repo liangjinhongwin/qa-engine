@@ -9,7 +9,6 @@ const Nav = (props) => {
 
   return (
     <header>
-
       <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
         <Link to="/" className="navbar-brand">Q&A Engine</Link>
         {props.auth.auth &&

@@ -45,7 +45,7 @@ const Search = (props) => {
         <Link to="/question/create"><button className="btn btn-primary">I have a question</button></Link>
         <form onSubmit={search}>
           <div className="input-group">
-            <input type="text" name="search" className="form-control" placeholder="Question" />
+            <input type="text" id="search" className="form-control" placeholder="Question" />
             <div className="input-group-append">
               <button type="submit" className="btn btn-secondary">Search</button>
             </div>

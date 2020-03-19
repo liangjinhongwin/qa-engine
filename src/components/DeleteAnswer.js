@@ -40,7 +40,7 @@ const DeleteAnswer = (props) => {
       <h1>Delete Answer</h1>
       <form onSubmit={submit}>
         <div className="form-group">
-          <input type="text" id="description" value={answer.description} disabled className="form-control input-lg" />
+          <input type="text" id="description" value={answer.description} disabled className="form-control" />
         </div>
         <button type="submit" className="btn btn-danger btn-sm">Confirm</button>
         <Link to={{ pathname: `/question/id=${question.id}`, state: question }}>

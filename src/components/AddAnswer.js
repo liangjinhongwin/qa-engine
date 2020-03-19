@@ -5,6 +5,7 @@ const BASE_URL = "https://qaengineapi.azurewebsites.net/api/";
 
 const AddAnswer = (props) => {
   const question = props.location.state;
+  
   const submit = async (e) => {
     e.preventDefault();
     let input = e.target.description.value;
@@ -39,8 +40,9 @@ const AddAnswer = (props) => {
     <div className="container">
       <h1>I want to answer...</h1>
       <form onSubmit={submit}>
+        <h4>{question.description}</h4>
         <div className="form-group">
-          <input type="text" id="description" placeholder="Type something here..." className="form-control input-lg" />
+          <input type="text" id="description" placeholder="Type something here..." className="form-control" />
         </div>
         <button type="submit" className="btn btn-primary btn-sm">Confirm</button>
         <Link to={{ pathname: `/question/id=${question.id}`, state: question }}>

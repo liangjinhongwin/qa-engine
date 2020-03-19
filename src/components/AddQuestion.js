@@ -38,7 +38,7 @@ const AddQuestion = (props) => {
       <h1>I want to ask...</h1>
       <form onSubmit={submit}>
         <div className="form-group">
-          <input type="text" id="description" placeholder="Type something here..." className="form-control input-lg" />
+          <input type="text" id="description" placeholder="Type something here..." className="form-control" />
         </div>
         <button type="submit" className="btn btn-primary btn-sm">Confirm</button>
         <Link to="/">
