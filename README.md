@@ -1,5 +1,6 @@
-The project is hosted on https://qa-engine.netlify.com/
-The database repo is on https://github.com/liangjinhongwin/qa-engine-api
+The project is hosted on https://qa-engine.netlify.com/  
+The database repo is on https://github.com/liangjinhongwin/qa-engine-api  
+The video tour is on https://youtu.be/qd6TCrX_Iq0  
 
 # Passion Project - Question & Answer Engine
 
