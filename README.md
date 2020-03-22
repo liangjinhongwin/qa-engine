@@ -1,18 +1,17 @@
-The project is hosted on https://qa-engine.netlify.com/  
+The project is hosted on https://qa-engine.netlify.com  
 The database repo is on https://github.com/liangjinhongwin/qa-engine-api  
 The video tour is on https://youtu.be/qd6TCrX_Iq0  
 
 # Passion Project - Question & Answer Engine
 
 ### About
-
-This is my passion project that users can post their questions then other users can provide their answers. In the end, the original user of the question is able to pick the best answer.
+This is my passion project that users can post their questions then other users can provide their answers.
 
 ### Functional and Non-functional Requirements
 - Functional Requirements
   - User should be able to create an account to log in
   - User should be able to add questions and answers to questions
-  - User should be able to pick the best answer to own question
+  - User should be able to search questions
   - Store the data somewhere
   
 - Non-functional Requirements
@@ -25,7 +24,6 @@ This is my passion project that users can post their questions then other users 
    - Log-in
    - Adding questions
    - Adding answers to questions
-   - Picking the best answer by the original user
    - Historical data
    
  - Nice to have:
@@ -34,5 +32,6 @@ This is my passion project that users can post their questions then other users 
    
 ### Entity Relationship Diagram
 ![erd](./assets/qa_engine_erd.JPG)
+
 ### Prototype
 ![prototype](./assets/qa_engine_prototype.JPG)
