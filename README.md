@@ -1,5 +1,5 @@
 The project is hosted on https://qa-engine.netlify.com  
-The database repo is on https://github.com/liangjinhongwin/qa-engine-api/tree/branck-kimo 
+The database repo is on https://github.com/liangjinhongwin/qa-engine-api/tree/branck-kimo  
 The video tour is on https://youtu.be/qd6TCrX_Iq0  
 
 # Passion Project - Question & Answer Engine
@@ -39,14 +39,14 @@ This is my passion project that users can post their questions then other users 
 
  - Web
    - Login page
-     ![login](./assets/login.PNG)
+     ![login](./assets/login.PNG)  
    - Main page
-     ![main](./assets/main.PNG)
+     ![main](./assets/main.PNG)  
    - Detail page
-     ![detail](./assets/detail.PNG)
+     ![detail](./assets/detail.PNG)  
    - Add page
-     ![add](./assets/add.PNG)
+     ![add](./assets/add.PNG)  
    - Profile page
-     ![profile](./assets/profile.PNG)
+     ![profile](./assets/profile.PNG)  
    - Search page
-     ![search](./assets/search.PNG)
+     ![search](./assets/search.PNG)  
